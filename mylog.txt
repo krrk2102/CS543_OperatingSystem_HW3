@@ -1,0 +1,23 @@
+a="\"This is the beginning of the script.\"" 
+echo "Content of A is: "$a 
+echo "My name is: $(whoami)"
+echo "Current directory is: `pwd`" 
+echo "Calculating factorial of 5:" 
+factorial=1 
+for a in `seq 1 5` 
+do 
+	factorial=`expr $factorial \* $a` 
+done 
+echo "5! = $factorial" 
+read -p "Please input value: " newval
+echo "The new val is: "$newval
+echo "The script is done!"
+
+Script response is:
+Content of A is: "This is the beginning of the script."
+My name is: os
+Current directory is: /home/os
+Calculating factorial of 5:
+5! = 120
+The new val is: 10
+The script is done!

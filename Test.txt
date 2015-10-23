@@ -1,0 +1,42 @@
+* Please include all "%":
+Functionality 1 (alias):
+	Test case 1: % alias mem "cat /proc/meminfo"
+	Test case 2: % alias m "mkdir new_dir"
+	Test case 3: % alias r "rm -rf new_dir"
+
+Functionality 2 (script): 
+NOTICE: Please copy the statements and press enter line by line, do not copy all of them at one time.
+	Test case: % script mylog.txt
+		a="\"This is the beginning of the script.\"" 
+		echo "Content of A is: "$a 
+		echo "My name is: $(whoami)"
+		echo "Current directory is: `pwd`" 
+		echo "Calculating factorial of 5:" 
+		factorial=1 
+		for a in `seq 1 5` 
+		do 
+			factorial=`expr $factorial \* $a` 
+		done 
+		echo "5! = $factorial" 
+		read -p "Please input value: " newval
+		echo "The new val is: "$newval
+		echo "The script is done!"
+	% endscript
+
+Functionality 3 (path):
+	Test case: % set path = (. /bin /usr/bin)
+
+Functionality 4 (initialization file):
+	Test case: Please save following statement as ".cs543rc", in current user's home directory (e.g., /home/os/ in the provided virtualbox Debian OS). 
+		% set verbose on
+		% alias dir "ls -al"
+		% set path = (. /bin /usr/bin)
+
+Functionality 5 (verbose):
+	Test case 1: % set verbose on
+	Test case 2: % set verbose off
+
+Functionality 6 (pipe):
+	Test case 1: % ls -al | grep "os"
+	Test case 2: % ls | /bin/less &
+	Test case 3: % ls -l | more &
